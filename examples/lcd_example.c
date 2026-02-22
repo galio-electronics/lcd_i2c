@@ -7,8 +7,8 @@
 
 
 
-#define PROTOLINK_DEFAULT     1
-#include "v2.h"
+#define PROTOLINK_DEFAULT     true
+#include <protolink/v2.h> //<-- https://github.com/galio-electronics/protolink
 #include <bootloader.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,7 +30,7 @@ void main(void) {
     delay_ms(100);
     protolink_io_init();
     protolink_timer0_init();
-    protolink_interrupts_init();
+    //protolink_interrupts_init();
     output_low(LED1);
     output_low(LED2);
     lcd_init(); //usa defines del main
