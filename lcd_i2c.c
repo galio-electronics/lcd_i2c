@@ -223,6 +223,21 @@ void lcd_print_xy(int8 col, int8 row, ROM char *text)
    lcd_print(text);
 }
 
+void lcd_print_ram(char *text)
+{
+   while(*text != '\0')
+   {
+      lcd_putc(*text);
+      text++;
+   }
+}
+
+void lcd_print_xy_ram(int8 col, int8 row, char *text)
+{
+   lcd_gotoxy(col, row);
+   lcd_print_ram(text);
+}
+
 void lcd_backlight_on(void)
 {
    _lcd_backlight = LCD_BACKLIGHT;
